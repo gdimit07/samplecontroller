@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: samplecontroller
+  name: samplecontroller
+spec:
+  serviceAccountName: guitar-controller
+  containers:
+  - image: controller
+    imagePullPolicy: IfNotPresent
+    name: samplecontroller
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
